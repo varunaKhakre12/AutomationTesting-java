@@ -17,7 +17,7 @@ public class MouseAction {
 
     ChromeDriver driver;
 
-    String url = "https://google.com/";
+    String url = "https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_g50zekzm1_e&adgrpid=155259812313&hvpone=&hvptwo=&hvadid=674842289404&hvpos=&hvnetw=g&hvrand=13126720172771540286&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007768&hvtargid=kwd-29089120&hydadcr=5496_2359482&gad_source=1";
 
     public void invokeBrowser() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Desktop\\varunaProjects\\selenium\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
@@ -36,13 +36,16 @@ public class MouseAction {
         Actions mouseAction = new Actions(driver);
 //        mouseAction.moveToElement(driver.findElement(By.xpath("//div/p[text() = \"Resources\"]"))).build().perform();
         mouseAction
-                .moveToElement(driver.findElement(By.className("gLFyf")))
+                .moveToElement(driver.findElement(By.id("twotabsearchtextbox")))
                 .click()
                 .sendKeys("Varuna Khakre", Keys.ENTER)
-                .build()
-                .perform();
+                .build() //to build this string
+                .perform(); //to perform action of this string
         System.out.println("enteredd");
+
+        mouseAction.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav-link-accountList\"]/a/span"))).contextClick().build().perform();
     }
+
 
 
     public void closeBrowser() {
