@@ -1,22 +1,14 @@
 package org.example.dragNDrop;
 
-import org.example.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Value;
 import org.testng.Assert;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 
 public class dnd {
@@ -25,8 +17,11 @@ public class dnd {
     ChromeDriver driver;
     String url = "https://rahulshettyacademy.com/dropdownsPractise/";
 
+    @Value("${chrome.driver.location}")
+    private String chromeDriverPath;
+
     public void invokeBrowser() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\seleniumProjects\\AutomationTesting-java\\libs\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();

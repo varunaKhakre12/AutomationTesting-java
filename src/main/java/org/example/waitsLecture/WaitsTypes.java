@@ -1,16 +1,13 @@
 package org.example.waitsLecture;
 
-import org.example.utils.WaitUtils;
+import org.example.waitsLecture.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.Duration;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 
@@ -19,8 +16,11 @@ public class WaitsTypes {
     ChromeDriver driver;
     String url = "https://www.flipkart.com/";
 
+    @Value("${chrome.driver.location}")
+    private String chromeDriverPath;
+
     public void invokeBrowser() {
-         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\seleniumProjects\\AutomationTesting-java\\libs\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
          driver = new ChromeDriver();
          driver.manage().window().maximize();
          driver.manage().deleteAllCookies();

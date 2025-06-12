@@ -1,4 +1,4 @@
-package org.example.utils;
+package org.example.waitsLecture.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,16 +1,9 @@
 package org.example.frameLecure;
 
-import org.example.utils.WaitUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class FrameHandling {
@@ -19,8 +12,11 @@ public class FrameHandling {
     ChromeDriver driver;
     String url = "https://www.globalsqa.com/demo-site/frames-and-windows/?utm_source=chatgpt.com";
 
+    @Value("${chrome.driver.location}")
+    private String chromeDriverPath;
+
     public void invokeBrowser() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\seleniumProjects\\AutomationTesting-java\\libs\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
