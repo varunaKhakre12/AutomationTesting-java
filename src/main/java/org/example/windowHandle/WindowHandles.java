@@ -43,6 +43,10 @@ public class WindowHandles {
 
         String textEmail = driver.findElement(By.xpath("//p/strong/a")).getText();
         System.out.println("email: "+textEmail);
+
+        driver.switchTo().window(parentId);
+        driver.switchTo().window(parentId);
+        driver.findElement(By.id("username")).sendKeys(textEmail);
     }
 
 
