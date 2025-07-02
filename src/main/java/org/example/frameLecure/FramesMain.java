@@ -8,7 +8,8 @@ public class FramesMain {
 
         FrameHandling frameHandling = new FrameHandling();
         frameHandling.invokeBrowser();
-        frameHandling.switchToFrames();
+//        frameHandling.switchToFrames();
+        frameHandling.nestedFrames();
     }
 
 }

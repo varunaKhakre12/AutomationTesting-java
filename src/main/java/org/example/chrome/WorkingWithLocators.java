@@ -19,11 +19,8 @@ public class WorkingWithLocators {
 
     }
 
-    @Value("${chrome.driver.location}")
-    private String chromeDriverPath;
-
     public void invokeBrowser() {
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Desktop\\varunaProjects\\selenium\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
          driver = new ChromeDriver();
          driver.manage().window().maximize();
      }

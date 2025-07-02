@@ -1,27 +1,23 @@
-package org.example.dragNDrop;
+package org.example.dropdown;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.springframework.beans.factory.annotation.Value;
 import org.testng.Assert;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class dnd {
+public class Dd {
 
 
     ChromeDriver driver;
     String url = "https://rahulshettyacademy.com/dropdownsPractise/";
 
-    @Value("${chrome.driver.location}")
-    private String chromeDriverPath;
-
     public void invokeBrowser() {
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Desktop\\varunaProjects\\selenium\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
