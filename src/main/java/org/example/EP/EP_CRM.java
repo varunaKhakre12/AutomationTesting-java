@@ -42,7 +42,7 @@ public class EP_CRM {
         String password = "Welcome01#";
         String epid = "EP0000178";
 
-        System.out.println(userName+ " "+password);
+        System.out.println(userName+ ", "+password);
 
         //enter username
         driver.findElement(By.xpath("//input[@name=\"username\"]")).sendKeys(userName);
@@ -85,7 +85,7 @@ public class EP_CRM {
 
         //switch to tab beneficiary
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//table/tbody/tr")));
-        driver.findElement(By.xpath("//p[text()=\"Beneficiary\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"root\"]/main/section/section/section/div[2]/ul/li[2]/p")).click();
         wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("//table/tbody/tr"))));
 
         //click add+
