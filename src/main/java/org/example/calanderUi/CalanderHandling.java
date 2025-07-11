@@ -55,6 +55,11 @@ public class CalanderHandling {
 
     }
 
+    //scroll handling
+    public void scrollHandling(){
+
+    }
+
     public void closeBrowser() {
 //         driver.close(); //to close current browser window
         driver.quit(); //to close all browser windows
