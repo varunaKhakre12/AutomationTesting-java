@@ -20,7 +20,9 @@ public class ScrollHandling {
 
         ScrollHandling scrollHandling = new ScrollHandling();
         scrollHandling.invokeBrowser();
-        scrollHandling.scroll();
+//        scrollHandling.scroll();
+        scrollHandling.autoDropDown();
+
     }
 
     public void invokeBrowser() {
@@ -71,7 +73,20 @@ public class ScrollHandling {
         System.out.println("rows: "+ rows.size()+ ", columns: "+ cols.size());
         System.out.println(rows.get(2).getText());
 
-
+    }
+    public void autoDropDown(){
+        driver.findElement(By.id("autocomplete")).sendKeys("ind");
+        List<WebElement> elementsList = driver.findElements(By.xpath("//*[@id=\"ui-id-1\"]/li"));
+        for(WebElement element : elementsList){
+            System.out.println(element.getText());
+            if (element.getText().equals("India")){
+                System.out.println(element.getText()+ " found");
+                element.click();
+                break;
+            }
+        }
+        String actualValue= driver.findElement(By.id("autocomplete")).getAttribute("value");
+        Assert.assertEquals(actualValue, "India");
     }
 
     public void closeBrowser() {
