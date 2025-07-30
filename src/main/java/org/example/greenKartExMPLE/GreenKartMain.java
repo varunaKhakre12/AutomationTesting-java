@@ -7,8 +7,8 @@ public class GreenKartMain {
         GreenKart greenKart = new GreenKart();
         greenKart.invokeBrowser();
         greenKart.addToCart();
-        greenKart.checkout("rahulshettyacademy");
-//        greenKart.closeBrowser();
+//        greenKart.checkout("rahulshettyacademy");
+        greenKart.checkSorting();
     }
 
 }
